@@ -19,8 +19,8 @@ function Header() {
           <IonMenuToggle>
             <IonButton>
               <IonIcon
-                slot="icon-only"
-                src="./theme/Hamburger_icon.svg"
+
+                src="https://stackblitz.com/files/angular-a1fbmp/github/KSherwoodd/ControlNews/main/src/theme/Hamburger_icon.svg"
               ></IonIcon>
             </IonButton>
           </IonMenuToggle>
