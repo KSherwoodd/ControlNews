@@ -18,7 +18,10 @@ function Header() {
         <IonButtons slot="start">
           <IonMenuToggle>
             <IonButton>
-              <IonIcon slot="icon-only" name="menu"></IonIcon>
+              <IonIcon
+                slot="icon-only"
+                src="./theme/Hamburger_icon.svg"
+              ></IonIcon>
             </IonButton>
           </IonMenuToggle>
         </IonButtons>
