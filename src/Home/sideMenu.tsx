@@ -13,6 +13,8 @@ import {
   IonIcon,
 } from '@ionic/react';
 
+import { home, person, cog } from 'ionicons/icons';
+
 import './main.css';
 
 function SideMenu() {
@@ -29,17 +31,18 @@ function SideMenu() {
           <IonListHeader>Navigate</IonListHeader>
           <IonMenuToggle auto-hide="false">
             <IonItem button>
-              <IonIcon name="home"></IonIcon>
-              <IonLabel>Feed</IonLabel>
+              <IonIcon icon={home} />
+              <IonLabel> Feed</IonLabel>
             </IonItem>
 
             <IonItem button>
-              <IonIcon name="home" />
-              <IonLabel>Profile</IonLabel>
+              <IonIcon icon={person} />
+              <IonLabel> Profile</IonLabel>
             </IonItem>
 
             <IonItem button>
-              <IonLabel>Settings</IonLabel>
+              <IonIcon icon={cog} />
+              <IonLabel> Settings</IonLabel>
             </IonItem>
           </IonMenuToggle>
         </IonList>

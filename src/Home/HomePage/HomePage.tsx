@@ -10,22 +10,20 @@ import {
   IonContent,
 } from '@ionic/react';
 
-import './main.css';
-
 function Feed() {
   const cards = [];
   for (let i = 0; i < 10; i++) {
     cards.push(
       <IonCard>
         <IonCardHeader>
-          <IonCardTitle>Card Title</IonCardTitle>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+          <IonCardTitle>News Title</IonCardTitle>
+          <IonCardSubtitle>News Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
         <IonCardContent>
-          Here's a small text description for the card content.
+          The article here would be very important, if there was one to show.
           <IonDatetime placeholder="Select Date"></IonDatetime>
-          <IonButton fill="clear">Start</IonButton>
+          <IonButton fill="outline">Start</IonButton>
         </IonCardContent>
       </IonCard>
     );

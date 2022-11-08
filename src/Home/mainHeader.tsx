@@ -9,6 +9,8 @@ import {
   IonButton,
 } from '@ionic/react';
 
+import { menu } from 'ionicons/icons';
+
 import './main.css';
 
 function Header() {
@@ -18,10 +20,7 @@ function Header() {
         <IonButtons slot="start">
           <IonMenuToggle>
             <IonButton>
-              <IonIcon
-
-                src="https://stackblitz.com/files/angular-a1fbmp/github/KSherwoodd/ControlNews/main/src/theme/Hamburger_icon.svg"
-              ></IonIcon>
+              <IonIcon icon={menu} />
             </IonButton>
           </IonMenuToggle>
         </IonButtons>
