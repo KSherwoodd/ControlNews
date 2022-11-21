@@ -30,12 +30,12 @@ function SideMenu() {
         <IonList>
           <IonListHeader>Navigate</IonListHeader>
           <IonMenuToggle auto-hide="false">
-            <IonItem href="./ProfilePage/ProfilePage.tsx" button>
+            <IonItem button>
               <IonIcon icon={home} />
               <IonLabel> Feed</IonLabel>
             </IonItem>
 
-            <IonItem button>
+            <IonItem href="./ProfilePage/ProfilePage.tsx" button>
               <IonIcon icon={person} />
               <IonLabel> Profile</IonLabel>
             </IonItem>
