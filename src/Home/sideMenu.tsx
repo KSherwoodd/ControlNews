@@ -16,38 +16,41 @@ import {
 import { home, person, cog } from 'ionicons/icons';
 
 import './main.css';
+import { IonReactRouter } from '@ionic/react-router';
 
 function SideMenu() {
   return (
-    <IonMenu content-id="main-content">
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle>Menu</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+    <IonReactRouter>
+      <IonMenu content-id="main-content">
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonTitle>Menu</IonTitle>
+          </IonToolbar>
+        </IonHeader>
 
-      <IonContent>
-        <IonList>
-          <IonListHeader>Navigate</IonListHeader>
-          <IonMenuToggle auto-hide="false">
-            <IonItem button>
-              <IonIcon icon={home} />
-              <IonLabel> Feed</IonLabel>
-            </IonItem>
+        <IonContent>
+          <IonList>
+            <IonListHeader>Navigate</IonListHeader>
+            <IonMenuToggle auto-hide="false">
+              <IonItem button>
+                <IonIcon icon={home} />
+                <IonLabel> Feed</IonLabel>
+              </IonItem>
 
-            <IonItem href="./ProfilePage/ProfilePage.tsx" button>
-              <IonIcon icon={person} />
-              <IonLabel> Profile</IonLabel>
-            </IonItem>
+              <IonItem href="/ProfilePage/ProfilePage.tsx" button>
+                <IonIcon icon={person} />
+                <IonLabel> Profile</IonLabel>
+              </IonItem>
 
-            <IonItem button>
-              <IonIcon icon={cog} />
-              <IonLabel> Settings</IonLabel>
-            </IonItem>
-          </IonMenuToggle>
-        </IonList>
-      </IonContent>
-    </IonMenu>
+              <IonItem button>
+                <IonIcon icon={cog} />
+                <IonLabel> Settings</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          </IonList>
+        </IonContent>
+      </IonMenu>
+    </IonReactRouter>
   );
 }
 
