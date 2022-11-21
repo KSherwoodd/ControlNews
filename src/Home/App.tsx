@@ -5,7 +5,9 @@ import {
   IonPage,
   IonRouterOutlet,
 } from '@ionic/react';
-import { Route } from 'react-router-dom';
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 import { IonReactRouter } from '@ionic/react-router';
 
 /* Core CSS required for Ionic components to work properly */
@@ -45,16 +47,28 @@ setupIonicReact({
     </IonReactRouter>
 */
 
-//https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
-const App: React.FunctionComponent = () => (
-  <IonApp>
-
+/*
     <SideMenu />
 
     <IonPage className="ion-page" id="main-content">
       <Header />
       <Feed />
     </IonPage>
+*/
+
+//https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
+const App: React.FunctionComponent = () => (
+  <IonApp>
+    <Router>
+      <Routes>
+        <Route path="/">
+          <Feed />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+      </Routes>
+    </Router>
   </IonApp>
 );
 
