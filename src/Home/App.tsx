@@ -61,14 +61,14 @@ const App: React.FunctionComponent = () => (
   <IonApp>
     <Router>
       <Routes>
-        <Route path="/">
-          <Feed />
-        </Route>
+        <Route path="/" element={<Feed />} />
         <Route path="/profile">
           <Profile />
         </Route>
       </Routes>
     </Router>
+
+
   </IonApp>
 );
 
