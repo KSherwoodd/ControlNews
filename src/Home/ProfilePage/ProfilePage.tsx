@@ -12,7 +12,7 @@ import {
 
 function Profile() {
   const cards = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 2; i++) {
     cards.push(
       <IonCard>
         <IonCardHeader>

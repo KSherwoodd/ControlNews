@@ -5,7 +5,7 @@ import {
   IonPage,
   IonRouterOutlet,
 } from '@ionic/react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { IonReactRouter } from '@ionic/react-router';
 
 /* Core CSS required for Ionic components to work properly */
@@ -33,19 +33,21 @@ import SideMenu from './sideMenu';
 import Header from './mainHeader';
 
 setupIonicReact({
-  mode: 'ios',
+  mode: 'md',
 });
 
-//https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
-const App: React.FunctionComponent = () => (
-  <IonApp>
+/*
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/Home" component={Feed} exact={true} />
         <Route path="/Profile" component={Profile} exact={true} />
-        <Redirect exact from="/" to="/Home" />
       </IonRouterOutlet>
     </IonReactRouter>
+*/
+
+//https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
+const App: React.FunctionComponent = () => (
+  <IonApp>
 
     <SideMenu />
 
