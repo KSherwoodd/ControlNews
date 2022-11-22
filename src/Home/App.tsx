@@ -6,7 +6,7 @@ import {
   IonRouterOutlet,
 } from '@ionic/react';
 
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -64,12 +64,12 @@ function mainFeed() {
 const App: React.FunctionComponent = () => (
   <IonApp>
     <Router>
-      <Routes>
+      <Switch>
         <Route path="/" element={mainFeed()} />
         <Route path="/profile">
           <Profile />
         </Route>
-      </Routes>
+      </Switch>
     </Router>
   </IonApp>
 );
