@@ -65,7 +65,9 @@ const App: React.FunctionComponent = () => (
   <IonApp>
     <Router>
       <Switch>
-        <Route path="/" element={mainFeed()} />
+        <Route path="/">
+          mainFeed();
+        </Route>
         <Route path="/profile">
           <Profile />
         </Route>
