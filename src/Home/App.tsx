@@ -6,9 +6,7 @@ import {
   IonRouterOutlet,
 } from '@ionic/react';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-import { IonReactRouter } from '@ionic/react-router';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,6 +31,7 @@ import Feed from './HomePage/HomePage';
 import Profile from './ProfilePage/ProfilePage';
 import SideMenu from './sideMenu';
 import Header from './mainHeader';
+import { IonReactRouter } from '@ionic/react-router';
 
 setupIonicReact({
   mode: 'md',
@@ -47,7 +46,20 @@ setupIonicReact({
     </IonReactRouter>
 */
 
-function mainFeed() {
+/*
+    <Router>
+      <Switch>
+        <Route path="/">
+          <MainFeed />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+      </Switch>
+    </Router>
+*/
+
+const MainFeed = () => {
   return (
     <>
       <SideMenu />
@@ -58,21 +70,17 @@ function mainFeed() {
       </IonPage>
     </>
   );
-}
+};
 
 //https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
 const App: React.FunctionComponent = () => (
   <IonApp>
-    <Router>
-      <Switch>
-        <Route path="/">
-          mainFeed();
-        </Route>
-        <Route path="/profile">
-          <Profile />
-        </Route>
-      </Switch>
-    </Router>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route path="/" component={MainFeed} exact={true} />
+        <Route path="/Profile" component={Profile} exact={true} />
+      </IonRouterOutlet>
+    </IonReactRouter>
   </IonApp>
 );
 

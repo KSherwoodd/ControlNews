@@ -37,7 +37,7 @@ function SideMenu() {
                 <IonLabel> Feed</IonLabel>
               </IonItem>
 
-              <IonItem href="/ProfilePage/ProfilePage.tsx" button>
+              <IonItem href="/profile" button>
                 <IonIcon icon={person} />
                 <IonLabel> Profile</IonLabel>
               </IonItem>

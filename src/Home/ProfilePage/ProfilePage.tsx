@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonButton,
-  IonDatetime,
-  IonContent,
-} from '@ionic/react';
+import {} from '@ionic/react';
 
 const Profile = () => (
   <>
