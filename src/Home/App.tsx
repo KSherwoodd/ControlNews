@@ -47,28 +47,30 @@ setupIonicReact({
     </IonReactRouter>
 */
 
-/*
-    <SideMenu />
+function mainFeed() {
+  return (
+    <>
+      <SideMenu />
 
-    <IonPage className="ion-page" id="main-content">
-      <Header />
-      <Feed />
-    </IonPage>
-*/
+      <IonPage className="ion-page" id="main-content">
+        <Header />
+        <Feed />
+      </IonPage>
+    </>
+  );
+}
 
 //https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
 const App: React.FunctionComponent = () => (
   <IonApp>
     <Router>
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={mainFeed()} />
         <Route path="/profile">
           <Profile />
         </Route>
       </Routes>
     </Router>
-
-
   </IonApp>
 );
 
