@@ -3,7 +3,7 @@ import {} from '@ionic/react';
 
 const Profile = () => (
   <>
-    <p>Profile</p>
+    <h1>Settings</h1>
   </>
 );
 
