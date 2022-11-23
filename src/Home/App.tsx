@@ -6,7 +6,7 @@ import {
   IonRouterOutlet,
 } from '@ionic/react';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,6 +30,8 @@ import './theme/variables.css';
 import Feed from './HomePage/HomePage';
 import Profile from './ProfilePage/ProfilePage';
 import Settings from './SettingsPage/SettingsPage';
+
+import Test from './TestPage/TestPage';
 
 import SideMenu from './sideMenu';
 import Header from './mainHeader';
@@ -82,6 +84,7 @@ const App: React.FunctionComponent = () => (
         <Route path="/" component={MainFeed} exact={true} />
         <Route path="/Profile" component={Profile} exact={true} />
         <Route path="/Settings" component={Settings} exact={true} />
+        <Route path="/Test" component={Test} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
