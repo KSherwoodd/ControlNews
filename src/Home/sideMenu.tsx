@@ -42,7 +42,7 @@ function SideMenu() {
                 <IonLabel> Profile</IonLabel>
               </IonItem>
 
-              <IonItem button>
+              <IonItem href="/settings" button>
                 <IonIcon icon={cog} />
                 <IonLabel> Settings</IonLabel>
               </IonItem>
