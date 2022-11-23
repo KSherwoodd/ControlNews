@@ -67,7 +67,7 @@ const MainFeed = () => {
   return (
     <>
       <SideMenu />
-
+      
       <IonPage className="ion-page" id="main-content">
         <Header />
         <Feed />
