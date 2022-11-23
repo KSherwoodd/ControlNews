@@ -29,6 +29,8 @@ import './theme/variables.css';
 
 import Feed from './HomePage/HomePage';
 import Profile from './ProfilePage/ProfilePage';
+import Settings from './SettingsPage/SettingsPage';
+
 import SideMenu from './sideMenu';
 import Header from './mainHeader';
 import { IonReactRouter } from '@ionic/react-router';
@@ -79,6 +81,7 @@ const App: React.FunctionComponent = () => (
       <IonRouterOutlet>
         <Route path="/" component={MainFeed} exact={true} />
         <Route path="/Profile" component={Profile} exact={true} />
+        <Route path="/Settings" component={Settings} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
