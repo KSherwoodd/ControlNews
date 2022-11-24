@@ -10,7 +10,6 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonButton,
-  IonLabel,
 } from '@ionic/react';
 
 function Settings() {
