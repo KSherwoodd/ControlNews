@@ -22,9 +22,10 @@ function Test() {
     setItems([...items, ...newItems]);
   };
 
+  
   useEffect(() => {
-    // eslint-disable-next-line
     generateItems();
+    // eslint-disable-next-line
   }, []);
 
   return (
