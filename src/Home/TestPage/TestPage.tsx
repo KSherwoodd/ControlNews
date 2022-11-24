@@ -23,6 +23,7 @@ function Test() {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line
     generateItems();
   }, []);
 
