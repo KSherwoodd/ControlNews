@@ -24,3 +24,18 @@ ion-card-header.ios {
   transform: scale(2);
   justify-self: center;
 }
+
+@keyframes profile-picture-slide {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.profile-grid-container > ion-avatar:hover {
+  animation-name: profile-picture-slide;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
