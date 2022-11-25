@@ -1,62 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
-  IonContent,
-  IonInfiniteScroll,
-  IonInfiniteScrollContent,
+  IonIcon,
+  IonItem,
+  IonLabel,
   IonList,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
-  IonButton,
+  IonListHeader,
+  IonMenuToggle,
 } from '@ionic/react';
+import { home, person, cog } from 'ionicons/icons';
 
-function Settings() {
-  const [articles, setArticles] = useState<JSX.Element[]>([]);
-
-  const generateItems = () => {
-    const newArticles = [];
-    for (let i = 0; i < 20; i++) {
-      newArticles.push(
-        <>
-          <IonCardHeader>
-            <IonCardTitle>News Title {articles.length + i + 1}</IonCardTitle>
-            <IonCardSubtitle>News Subtitle</IonCardSubtitle>
-          </IonCardHeader>
-
-          <IonCardContent>
-            The article here would be very important, if there was one to show.
-            <IonButton fill="outline">Start</IonButton>
-          </IonCardContent>
-        </>
-      );
-    }
-    setArticles([...articles, ...newArticles]);
-  };
-
-  useEffect(() => {
-    generateItems();
-    // eslint-disable-next-line
-  }, []);
-
+const Settings = () => {
   return (
-    <IonContent>
-      <IonList>
-        {articles.map((article, index) => (
-          <IonCard>{article}</IonCard>
-        ))}
-      </IonList>
-      <IonInfiniteScroll
-        onIonInfinite={(event) => {
-          generateItems();
-          setTimeout(() => event.target.complete(), 500);
-        }}
-      >
-        <IonInfiniteScrollContent loadingSpinner="bubbles" />
-      </IonInfiniteScroll>
-    </IonContent>
+    <IonList>
+      <IonListHeader>Navigate</IonListHeader>
+      <IonMenuToggle auto-hide="false">
+        <IonItem href="/" button>
+          <IonIcon icon={home} />
+          <IonLabel> Feed</IonLabel>
+        </IonItem>
+
+        <IonItem href="/profile" button>
+          <IonIcon icon={person} />
+          <IonLabel> Profile</IonLabel>
+        </IonItem>
+
+        <IonItem href="/settings" button>
+          <IonIcon icon={cog} />
+          <IonLabel> Settings</IonLabel>
+        </IonItem>
+      </IonMenuToggle>
+    </IonList>
   );
-}
+};
 
 export default Settings;
