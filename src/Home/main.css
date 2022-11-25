@@ -21,16 +21,17 @@ ion-card-header.ios {
 }
 
 .profile-grid-container > ion-avatar {
-  transform: scale(2);
   justify-self: center;
+  transform: scale(2);
 }
 
+/*
 @keyframes profile-picture-slide {
   from {
-    transform: scale(2);
+    transform: scale(1);
   }
   to {
-    transform: scale(1);
+    transform: scale(2);
   }
 }
 
@@ -38,4 +39,6 @@ ion-card-header.ios {
   animation-name: profile-picture-slide;
   animation-timing-function: ease-out;
   animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
+*/
