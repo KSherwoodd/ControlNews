@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonAvatar, IonChip, IonPage, IonContent } from '@ionic/react';
+import { IonAvatar, IonPage, IonContent } from '@ionic/react';
 
 import SideMenu from '../sideMenu';
 import Header from '../mainHeader';

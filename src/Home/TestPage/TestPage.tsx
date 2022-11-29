@@ -1,53 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import {
-  IonContent,
-  IonInfiniteScroll,
-  IonInfiniteScrollContent,
-  IonList,
-  IonItem,
-  IonLabel,
-  IonIcon,
-} from '@ionic/react';
+import React from 'react';
+import { IonContent, IonPage, IonAvatar } from '@ionic/react';
 
-import { add } from 'ionicons/icons';
+import SideMenu from '../../Home/sideMenu';
+import Header from '../../Home/mainHeader';
 
-function Test() {
-  const [items, setItems] = useState<String[]>([]);
+import './TestCSS.css';
 
-  const generateItems = () => {
-    const newItems = [];
-    for (let i = 0; i < 20; i++) {
-      newItems.push('Item' + (items.length + i));
-    }
-    setItems([...items, ...newItems]);
-  };
-
-  
-  useEffect(() => {
-    generateItems();
-    // eslint-disable-next-line
-  }, []);
-
+const Test = () => {
   return (
-    <IonContent>
-      <IonList>
-        {items.map((item, index) => (
-          <IonItem>
-            <IonIcon icon={add} />
-            <IonLabel>{item}</IonLabel>
-          </IonItem>
-        ))}
-      </IonList>
-      <IonInfiniteScroll
-        onIonInfinite={(event) => {
-          generateItems();
-          setTimeout(() => event.target.complete(), 500);
-        }}
-      >
-        <IonInfiniteScrollContent loadingSpinner="bubbles" />
-      </IonInfiniteScroll>
-    </IonContent>
+    <>
+      <SideMenu />
+      <IonPage className="ion-page" id="main-content">
+        <Header />
+        <IonContent>
+          <IonAvatar>
+            <img
+              alt="pfp"
+              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+            />
+          </IonAvatar>
+        </IonContent>
+      </IonPage>
+    </>
   );
-}
+};
 
 export default Test;
