@@ -27,6 +27,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
 import Feed from './HomePage/HomePage';
 import Profile from './ProfilePage/ProfilePage';
 import Settings from './SettingsPage/SettingsPage';
@@ -38,7 +39,7 @@ import Header from './mainHeader';
 import { IonReactRouter } from '@ionic/react-router';
 
 setupIonicReact({
-  mode: 'md',
+  mode: 'ios',
 });
 
 /*
@@ -67,7 +68,7 @@ const MainFeed = () => {
   return (
     <>
       <SideMenu />
-      
+
       <IonPage className="ion-page" id="main-content">
         <Header />
         <Feed />
@@ -81,6 +82,7 @@ const App: React.FunctionComponent = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
+        {/*<Route path="/" component={SignIn} exact={true} />*/}
         <Route path="/" component={MainFeed} exact={true} />
         <Route path="/Profile" component={Profile} exact={true} />
         <Route path="/Settings" component={Settings} exact={true} />
