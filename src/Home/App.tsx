@@ -39,7 +39,7 @@ import Header from './mainHeader';
 import { IonReactRouter } from '@ionic/react-router';
 
 setupIonicReact({
-  mode: 'ios',
+  mode: 'md',
 });
 
 /*
