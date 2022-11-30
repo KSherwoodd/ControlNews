@@ -32,7 +32,7 @@ function SideMenu() {
           <IonList>
             <IonListHeader>Navigate</IonListHeader>
             <IonMenuToggle auto-hide="false">
-              <IonItem button>
+              <IonItem href="/feed" button>
                 <IonIcon icon={home} />
                 <IonLabel> Feed</IonLabel>
               </IonItem>
