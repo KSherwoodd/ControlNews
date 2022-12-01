@@ -29,7 +29,7 @@ function SignIn() {
         <IonContent>
           <IonList>
             <IonItem fill="outline" id="username-input">
-              <IonLabel position="stacked"></IonLabel>
+              <IonLabel position="floating">Username</IonLabel>
               <IonInput className="detail-input" placeholder="Username">
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
@@ -38,7 +38,7 @@ function SignIn() {
             </IonItem>
 
             <IonItem fill="outline" id="password-input">
-              <IonLabel position="stacked"></IonLabel>
+              <IonLabel position="floating">Password</IonLabel>
               <IonInput
                 className="detail-input"
                 type="password"
