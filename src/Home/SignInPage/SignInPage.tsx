@@ -36,6 +36,8 @@ function SignIn() {
                 placeholder="Username"
                 autocomplete="username"
                 autofocus={autoFocus}
+                enterkeyhint="next"
+                mode="md"
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
@@ -50,6 +52,8 @@ function SignIn() {
                 type="password"
                 placeholder="Password"
                 autocomplete="current-password"
+                enterkeyhint="enter"
+                mode="md"
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
