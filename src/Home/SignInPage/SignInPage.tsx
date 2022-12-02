@@ -19,6 +19,23 @@ import {
   closeCircleOutline as cross,
 } from 'ionicons/icons';
 
+function loginFailed() {
+  const [presentAlert] = useIonAlert();
+
+  presentAlert({
+    header: 'Invalid name or password',
+    buttons: [
+      {
+        text: 'Retry',
+        role: 'retry',
+      },
+    ],
+    onDidDismiss: (e: CustomEvent) => {
+      return;
+    },
+  });
+}
+
 function checkLogin(username: string, password: string) {
   //This function will access the database and check login details
   //Then it will compare the entered data with the provided ones
@@ -28,14 +45,12 @@ function checkLogin(username: string, password: string) {
   if (username !== '' && password !== '') {
     console.log(username);
     console.log(password);
-    return true;
+    loginFailed();
   }
-
-  return false;
+  return;
 }
 
 function SignIn() {
-  const [presentAlert] = useIonAlert();
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
   const inputReq = true;
@@ -85,18 +100,9 @@ function SignIn() {
           </IonList>
 
           <IonButton
-            onClick={() =>
-              presentAlert({
-                header: 'Invalid name or password',
-                buttons: [
-                  {
-                    text: 'Retry',
-                    role: 'retry',
-                  },
-                ],
-                onDidDismiss: (e: CustomEvent) => setValidCheck(!validCheck),
-              })
-            }
+            onClick={() => {
+              checkLogin(username, password);
+            }}
           >
             Click Me
           </IonButton>
