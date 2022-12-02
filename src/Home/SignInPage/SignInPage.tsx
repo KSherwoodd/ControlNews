@@ -22,6 +22,7 @@ import {
 function SignIn() {
   const [presentAlert] = useIonAlert();
   const [validCheck, setValidCheck] = useState(false);
+  const autoFocus = true;
 
   return (
     <>
@@ -30,7 +31,12 @@ function SignIn() {
           <IonList>
             <IonItem fill="outline" id="username-input">
               <IonLabel position="floating">Username</IonLabel>
-              <IonInput className="detail-input" placeholder="Username">
+              <IonInput
+                className="detail-input"
+                placeholder="Username"
+                autocomplete="username"
+                autofocus={autoFocus}
+              >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
                 </IonBadge>
@@ -43,6 +49,7 @@ function SignIn() {
                 className="detail-input"
                 type="password"
                 placeholder="Password"
+                autocomplete="current-password"
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
