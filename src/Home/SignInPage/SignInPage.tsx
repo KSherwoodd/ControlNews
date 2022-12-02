@@ -38,7 +38,7 @@ function SignIn() {
                 autocomplete="username"
                 autofocus={autoFocus}
                 enterkeyhint="next"
-                mode="md"
+                mode="ios"
                 required={inputReq}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
@@ -55,7 +55,7 @@ function SignIn() {
                 placeholder="Password"
                 autocomplete="current-password"
                 enterkeyhint="enter"
-                mode="md"
+                mode="ios"
                 required={inputReq}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
@@ -64,8 +64,7 @@ function SignIn() {
               </IonInput>
             </IonItem>
           </IonList>
-          {}
-          {}
+
           <IonButton
             onClick={() =>
               presentAlert({
