@@ -23,6 +23,7 @@ function SignIn() {
   const [presentAlert] = useIonAlert();
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
+  const inputReq = true;
 
   return (
     <>
@@ -38,6 +39,7 @@ function SignIn() {
                 autofocus={autoFocus}
                 enterkeyhint="next"
                 mode="md"
+                required={inputReq}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
@@ -54,6 +56,7 @@ function SignIn() {
                 autocomplete="current-password"
                 enterkeyhint="enter"
                 mode="md"
+                required={inputReq}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
