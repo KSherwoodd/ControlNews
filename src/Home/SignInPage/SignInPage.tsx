@@ -5,7 +5,6 @@ import {
   IonInput,
   IonItem,
   IonPage,
-  useIonAlert,
   IonLabel,
   IonList,
   IonBadge,
@@ -19,34 +18,17 @@ import {
   closeCircleOutline as cross,
 } from 'ionicons/icons';
 
-function useCheckLogin() {
-  const [presentAlert] = useIonAlert();
-
-  presentAlert({
-    header: 'Invalid name or password',
-    buttons: [
-      {
-        text: 'Retry',
-        role: 'retry',
-      },
-    ],
-    onDidDismiss: (e: CustomEvent) => {
-      return;
-    },
-  });
-}
-
-function CheckLogin(username: string, password: string) {
+function checkLogin(username: string, password: string) {
   //This function will access the database and check login details
   //Then it will compare the entered data with the provided ones
   //Then return either a successful login with a userID or a failure
 
   //For now it will return a bool for testing purposes
-  if (username !== '' && password !== '') {
-    console.log(username);
-    console.log(password);
-    useCheckLogin();
+  if (username === '' && password === '') {
+    return;
   }
+  console.log(username);
+  console.log(password);
   return;
 }
 
@@ -72,7 +54,7 @@ function SignIn() {
                 enterkeyhint="next"
                 mode="ios"
                 required={inputReq}
-                onIonInput={(e: any) => setUsername(e.target.value)}
+                onIonChange={(e: any) => setUsername(e.target.value)}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
@@ -90,7 +72,7 @@ function SignIn() {
                 enterkeyhint="enter"
                 mode="ios"
                 required={inputReq}
-                onIonInput={(e: any) => setPassword(e.target.value)}
+                onIonChange={(f: any) => setPassword(f.target.value)}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
@@ -102,6 +84,7 @@ function SignIn() {
           <IonButton
             onClick={() => {
               checkLogin(username, password);
+              setValidCheck(!validCheck);
             }}
           >
             Click Me
