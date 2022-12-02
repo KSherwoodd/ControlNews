@@ -19,7 +19,7 @@ import {
   closeCircleOutline as cross,
 } from 'ionicons/icons';
 
-function loginFailed() {
+function useCheckLogin() {
   const [presentAlert] = useIonAlert();
 
   presentAlert({
@@ -36,7 +36,7 @@ function loginFailed() {
   });
 }
 
-function checkLogin(username: string, password: string) {
+function CheckLogin(username: string, password: string) {
   //This function will access the database and check login details
   //Then it will compare the entered data with the provided ones
   //Then return either a successful login with a userID or a failure
@@ -45,7 +45,7 @@ function checkLogin(username: string, password: string) {
   if (username !== '' && password !== '') {
     console.log(username);
     console.log(password);
-    loginFailed();
+    useCheckLogin();
   }
   return;
 }
