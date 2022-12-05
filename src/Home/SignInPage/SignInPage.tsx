@@ -9,6 +9,7 @@ import {
   IonList,
   IonBadge,
   IonIcon,
+  IonRouterOutlet,
 } from '@ionic/react';
 
 import './SignInCSS.css';
@@ -18,6 +19,7 @@ import {
   closeCircleOutline as cross,
 } from 'ionicons/icons';
 import { Redirect } from 'react-router-dom';
+import { IonReactRouter } from '@ionic/react-router';
 
 function checkLogin(username: string, password: string) {
   //This function will access the database and check login details
@@ -87,7 +89,13 @@ function SignIn() {
               if (checkLogin(username, password)) {
                 //redirect to feed page
                 //props.history.push('/feed');
-                return(<Redirect to="feed"/>);
+                return (
+                  <IonReactRouter>
+                    <IonRouterOutlet>
+                      <Redirect to="/feed" />
+                    </IonRouterOutlet>
+                  </IonReactRouter>
+                );
               } else {
                 //fail login
                 setValidCheck(!validCheck);
