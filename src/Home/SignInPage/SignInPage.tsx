@@ -24,12 +24,12 @@ function checkLogin(username: string, password: string) {
   //Then return either a successful login with a userID or a failure
 
   //For now it will return a bool for testing purposes
-  if (username === '' && password === '') {
-    return;
+  if (username === '' || password === '') {
+    return false;
   }
   console.log(username);
   console.log(password);
-  return;
+  return true;
 }
 
 function SignIn() {
@@ -83,8 +83,12 @@ function SignIn() {
 
           <IonButton
             onClick={() => {
-              checkLogin(username, password);
-              setValidCheck(!validCheck);
+              if (checkLogin(username, password)) {
+                //redirect to feed page
+              } else {
+                //fail login
+                setValidCheck(!validCheck);
+              }
             }}
           >
             Click Me
