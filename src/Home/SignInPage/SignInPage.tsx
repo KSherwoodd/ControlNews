@@ -17,6 +17,7 @@ import {
   checkmarkCircleOutline as tick,
   closeCircleOutline as cross,
 } from 'ionicons/icons';
+import { Redirect } from 'react-router-dom';
 
 function checkLogin(username: string, password: string) {
   //This function will access the database and check login details
@@ -85,6 +86,8 @@ function SignIn() {
             onClick={() => {
               if (checkLogin(username, password)) {
                 //redirect to feed page
+                //props.history.push('/feed');
+                return(<Redirect to="feed"/>);
               } else {
                 //fail login
                 setValidCheck(!validCheck);
