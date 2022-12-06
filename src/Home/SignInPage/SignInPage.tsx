@@ -18,7 +18,7 @@ import {
   checkmarkCircleOutline as tick,
   closeCircleOutline as cross,
 } from 'ionicons/icons';
-import { Redirect } from 'react-router-dom';
+import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { IonReactRouter } from '@ionic/react-router';
 
 function checkLogin(username: string, password: string) {
@@ -35,7 +35,7 @@ function checkLogin(username: string, password: string) {
   return true;
 }
 
-function SignIn() {
+const SignIn: React.FC<RouteComponentProps> = ({ history }) => {
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
   const inputReq = true;
@@ -89,13 +89,7 @@ function SignIn() {
               if (checkLogin(username, password)) {
                 //redirect to feed page
                 //props.history.push('/feed');
-                return (
-                  <IonReactRouter>
-                    <IonRouterOutlet>
-                      <Redirect to="/feed" />
-                    </IonRouterOutlet>
-                  </IonReactRouter>
-                );
+                return history.push('/feed');
               } else {
                 //fail login
                 setValidCheck(!validCheck);
@@ -108,6 +102,6 @@ function SignIn() {
       </IonPage>
     </>
   );
-}
+};
 
 export default SignIn;
