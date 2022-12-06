@@ -105,3 +105,9 @@ const SignIn: React.FC<RouteComponentProps> = ({ history }) => {
 };
 
 export default SignIn;
+
+//  next step:
+//
+//https://ionicframework.com/docs/api/input#helper--error-text
+//
+//
