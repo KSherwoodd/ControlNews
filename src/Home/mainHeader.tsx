@@ -9,7 +9,7 @@ import {
   IonButton,
 } from '@ionic/react';
 
-import { menu } from 'ionicons/icons';
+import { menuOutline } from 'ionicons/icons';
 
 import './main.css';
 
@@ -20,7 +20,7 @@ function Header() {
         <IonButtons slot="start">
           <IonMenuToggle>
             <IonButton>
-              <IonIcon icon={menu} />
+              <IonIcon icon={menuOutline} />
             </IonButton>
           </IonMenuToggle>
         </IonButtons>

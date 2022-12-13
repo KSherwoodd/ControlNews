@@ -9,7 +9,6 @@ import {
   IonList,
   IonBadge,
   IonIcon,
-  IonRouterOutlet,
 } from '@ionic/react';
 
 import './SignInCSS.css';
@@ -18,8 +17,7 @@ import {
   checkmarkCircleOutline as tick,
   closeCircleOutline as cross,
 } from 'ionicons/icons';
-import { Redirect, RouteComponentProps } from 'react-router-dom';
-import { IonReactRouter } from '@ionic/react-router';
+import { RouteComponentProps } from 'react-router-dom';
 
 function checkLogin(username: string, password: string) {
   //This function will access the database and check login details
