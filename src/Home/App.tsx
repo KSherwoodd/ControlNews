@@ -81,6 +81,12 @@ const MainFeed = () => {
 const App: React.FunctionComponent = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
+  //Conditional routing, the setLoggedIn state modifier is sent to the SignIn component
+  //So that when setLoginTrue is run in SignIn, it will update the state in App (here)
+
+  //It's kind of elegant
+  //Kind of disgusting
+
   return (
     <IonApp>
       <IonReactRouter>
@@ -88,7 +94,7 @@ const App: React.FunctionComponent = () => {
           <Route path="/" component={SignIn} exact={true} />
           <Route path="/Feed" component={MainFeed} render={() => loggedIn
             ? <Feed />
-            : <SignIn setUserLoggedIn={() => {setLoggedIn(true)}}/>} exact={true} />
+            : <SignIn setLoginTrue={() => {setLoggedIn(true)}} />} exact={true} />
           <Route path="/Profile" component={Profile} exact={true} />
           <Route path="/Settings" component={Settings} exact={true} />
         </IonRouterOutlet>

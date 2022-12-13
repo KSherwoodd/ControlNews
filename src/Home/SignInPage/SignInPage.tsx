@@ -36,6 +36,10 @@ function checkLogin(username: string, password: string) {
 //{setLoginTrue?: any}
 //setLoginTrue
 
+//I think I want to convert this either to a class (yuck) or a function (ugh fine)
+//Either way I need to pass in the setLoginTrue function as a parameter but the RouteComponentProps on the FunctionComponent type are getting distinctly in the way
+//This is a problem for another time...
+
 const SignIn: React.FC<RouteComponentProps> = ({ history }) => {
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
