@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   setupIonicReact,
   IonApp,
@@ -32,7 +32,7 @@ import Profile from './ProfilePage/ProfilePage';
 import Settings from './SettingsPage/SettingsPage';
 import SignIn from './SignInPage/SignInPage';
 
-import Test from './TestPage/TestPage';
+//import Test from './TestPage/TestPage';
 
 import SideMenu from './sideMenu';
 import Header from './mainHeader';
@@ -78,18 +78,25 @@ const MainFeed = () => {
 };
 
 //https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
-const App: React.FunctionComponent = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/" component={SignIn} exact={true} />
-        <Route path="/Feed" component={MainFeed} exact={true} />
-        <Route path="/Profile" component={Profile} exact={true} />
-        <Route path="/Settings" component={Settings} exact={true} />
-        <Route path="/Test" component={Test} exact={true} />
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FunctionComponent = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route path="/" component={SignIn} exact={true} />
+          <Route path="/Feed" component={MainFeed} render={() => loggedIn
+            ? <Feed />
+            : <SignIn setUserLoggedIn={() => {setLoggedIn(true)}}/>} exact={true} />
+          <Route path="/Profile" component={Profile} exact={true} />
+          <Route path="/Settings" component={Settings} exact={true} />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
+
+//          <Route path="/Test" component={Test} exact={true} />

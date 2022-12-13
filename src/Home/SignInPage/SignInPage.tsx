@@ -33,6 +33,9 @@ function checkLogin(username: string, password: string) {
   return true;
 }
 
+//{setLoginTrue?: any}
+//setLoginTrue
+
 const SignIn: React.FC<RouteComponentProps> = ({ history }) => {
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;

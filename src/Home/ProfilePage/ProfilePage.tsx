@@ -1,43 +1,65 @@
 import React from 'react';
-import { IonAvatar, IonPage, IonContent } from '@ionic/react';
+import {
+  IonContent,
+  IonPage,
+  IonAvatar,
+  IonItemSliding,
+  IonItemOptions,
+  IonItemOption,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonImg,
+} from '@ionic/react';
 
-import SideMenu from '../sideMenu';
-import Header from '../mainHeader';
+import SideMenu from '../../Home/sideMenu';
+import Header from '../../Home/mainHeader';
 
-const Profile = () => (
-  <>
-    <SideMenu />
-    <IonPage className="ion-page" id="main-content">
-      <Header />
-      <IonContent>
-        <div className="profile-grid-container">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
+import './ProfileCSS.css';
+
+import { archive, heart, trashBin } from 'ionicons/icons';
+
+const Profile = () => {
+  return (
+    <>
+      <SideMenu />
+      <IonPage className="ion-page" id="main-content">
+        <Header />
+        <IonContent>
           <IonAvatar>
-            <img
+            <IonImg
               alt="pfp"
               src="https://ionicframework.com/docs/img/demos/avatar.svg"
             />
           </IonAvatar>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
-        </div>
-      </IonContent>
-    </IonPage>
-  </>
-);
+
+          <IonItemSliding>
+            <IonItemOptions side="start">
+              <IonItemOption color="success">
+                <IonIcon slot="end" icon={archive}></IonIcon>
+                Archive
+              </IonItemOption>
+            </IonItemOptions>
+
+            <IonItem>
+              <IonLabel>Sliding Item with End Icons</IonLabel>
+            </IonItem>
+
+            <IonItemOptions>
+              <IonItemOption>
+                <IonIcon slot="end" icon={heart}></IonIcon>
+                Favorite
+              </IonItemOption>
+              <IonItemOption color="danger">
+                <IonIcon slot="end" icon={trashBin}></IonIcon>
+                Delete
+              </IonItemOption>
+            </IonItemOptions>
+          </IonItemSliding>
+        </IonContent>
+      </IonPage>
+    </>
+  );
+};
 
 export default Profile;
-
-/*
-        <IonAvatar>
-          <img
-            alt="pfp"
-            src="https://ionicframework.com/docs/img/demos/avatar.svg"
-          />
-        </IonAvatar>
-*/
