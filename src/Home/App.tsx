@@ -93,10 +93,19 @@ const App: React.FunctionComponent = () => {
         <IonRouterOutlet>
           <Route path="/" component={SignIn} exact={true} />
 
-          <Route path="/Feed" component={MainFeed} render={() => loggedIn
-            ? <Feed />
-            : <SignIn setLoginTrue={() => {setLoggedIn(true)}} />} exact={true} />
-            
+          <Route
+            path="/Feed"
+            component={MainFeed}
+            render={() =>
+              loggedIn ? (
+                <Feed />
+              ) : (
+                <SignIn setLoginTrue={() => setLoggedIn(true)} />
+              )
+            }
+            exact={true}
+          />
+
           <Route path="/Profile" component={Profile} exact={true} />
           <Route path="/Settings" component={Settings} exact={true} />
         </IonRouterOutlet>

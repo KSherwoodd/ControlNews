@@ -40,7 +40,9 @@ function checkLogin(username: string, password: string) {
 //Either way I need to pass in the setLoginTrue function as a parameter but the RouteComponentProps on the FunctionComponent type are getting distinctly in the way
 //This is a problem for another time...
 
-const SignIn: React.FC<RouteComponentProps> = ({ history }) => {
+//That time is now I guess :(
+
+function SignIn(setLoginTrue?: any) {
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
   const inputReq = true;
@@ -94,7 +96,11 @@ const SignIn: React.FC<RouteComponentProps> = ({ history }) => {
               if (checkLogin(username, password)) {
                 //redirect to feed page
                 //props.history.push('/feed');
+                //
+                setLoginTrue;
                 return history.push('/feed');
+                //
+                //return setLoginTrue;
               } else {
                 //fail login
                 setValidCheck(!validCheck);
@@ -107,7 +113,7 @@ const SignIn: React.FC<RouteComponentProps> = ({ history }) => {
       </IonPage>
     </>
   );
-};
+}
 
 export default SignIn;
 
