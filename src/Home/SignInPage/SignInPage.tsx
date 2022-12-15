@@ -54,6 +54,10 @@ function SignIn() {
     '^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$'
   );
 
+  const usernameRegex = new RegExp(
+    '^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$'
+  );
+
   return (
     <>
       <IonPage className="ion-page" id="main-content">
@@ -69,7 +73,12 @@ function SignIn() {
                 enterkeyhint="next"
                 mode="ios"
                 required={inputReq}
-                onIonChange={(e: any) => setUsername(e.target.value)}
+                onIonChange={(e: any) => {
+                  if (usernameRegex.test(e.target.value)) {
+                    setValidCheck(!validCheck);
+                    setUsername(e.target.value);
+                  }
+                }}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
