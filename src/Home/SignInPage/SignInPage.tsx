@@ -17,7 +17,7 @@ import {
   checkmarkCircleOutline as tick,
   closeCircleOutline as cross,
 } from 'ionicons/icons';
-import { RouteComponentProps } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function checkLogin(username: string, password: string) {
   //This function will access the database and check login details
@@ -48,6 +48,7 @@ function SignIn(setLoginTrue?: any) {
   const inputReq = true;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   return (
     <>
