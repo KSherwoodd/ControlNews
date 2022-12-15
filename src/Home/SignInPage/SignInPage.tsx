@@ -42,7 +42,7 @@ function checkLogin(username: string, password: string) {
 
 //That time is now I guess :(
 
-function SignIn(setLoginTrue: any) {
+function SignIn(setLoginTrue: Function) {
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
   const inputReq = true;
