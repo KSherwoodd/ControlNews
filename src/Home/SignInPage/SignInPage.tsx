@@ -98,7 +98,7 @@ function SignIn(setLoginTrue?: any) {
                 //redirect to feed page
                 //props.history.push('/feed');
                 //
-                setLoginTrue;
+                setLoginTrue();
                 return history.push('/feed');
                 //
                 //return setLoginTrue;
