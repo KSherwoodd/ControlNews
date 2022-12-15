@@ -42,13 +42,17 @@ function checkLogin(username: string, password: string) {
 
 //That time is now I guess :(
 
-function SignIn(setLoginTrue: Function) {
+function SignIn() {
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
   const inputReq = true;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
+
+  const passwordRegex = new RegExp(
+    '^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$'
+  );
 
   return (
     <>
@@ -83,7 +87,12 @@ function SignIn(setLoginTrue: Function) {
                 enterkeyhint="enter"
                 mode="ios"
                 required={inputReq}
-                onIonChange={(f: any) => setPassword(f.target.value)}
+                onIonChange={(f: any) => {
+                  if (passwordRegex.test(f.target.value)) {
+                    setValidCheck(!validCheck);
+                    setPassword(f.target.value);
+                  }
+                }}
               >
                 <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
                   <IonIcon icon={!validCheck ? cross : tick} />
@@ -98,7 +107,7 @@ function SignIn(setLoginTrue: Function) {
                 //redirect to feed page
                 //props.history.push('/feed');
                 //
-                setLoginTrue.call();
+                //setLoginTrue.call();
                 return history.push('/feed');
                 //
                 //return setLoginTrue;
