@@ -42,7 +42,7 @@ function checkLogin(username: string, password: string) {
 
 //That time is now I guess :(
 
-function SignIn(setLoginTrue?: any) {
+function SignIn(setLoginTrue: any) {
   const [validCheck, setValidCheck] = useState(false);
   const autoFocus = true;
   const inputReq = true;
@@ -98,7 +98,7 @@ function SignIn(setLoginTrue?: any) {
                 //redirect to feed page
                 //props.history.push('/feed');
                 //
-                setLoginTrue();
+                setLoginTrue.call();
                 return history.push('/feed');
                 //
                 //return setLoginTrue;
