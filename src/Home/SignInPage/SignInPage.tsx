@@ -53,7 +53,9 @@ function SignIn() {
 
   const passwordRegex = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,20}$');
 
-  const usernameRegex = new RegExp('^(?!.*..)(?!.*.$)[^W][w.]{0,29}$');
+  const usernameRegex = new RegExp(
+    '^(?!.*\\.\\.)(?!.*\\.$)[^\\W][\\w.]{0,29}$'
+  );
 
   return (
     <>
@@ -121,15 +123,7 @@ function SignIn() {
             onClick={() => {
               if (checkLogin(username, password)) {
                 //redirect to feed page
-                //props.history.push('/feed');
-                //
-                //setLoginTrue.call();
                 return history.push('/feed');
-                //
-                //return setLoginTrue;
-              } else {
-                //fail login
-                setPasswordCheck(!passwordCheck);
               }
             }}
           >
