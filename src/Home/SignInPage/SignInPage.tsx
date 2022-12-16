@@ -43,7 +43,8 @@ function checkLogin(username: string, password: string) {
 //That time is now I guess :(
 
 function SignIn() {
-  const [validCheck, setValidCheck] = useState(false);
+  const [passwordCheck, setPasswordCheck] = useState(false);
+  const [usernameCheck, setUsernameCheck] = useState(false);
   const autoFocus = true;
   const inputReq = true;
   const [username, setUsername] = useState('');
@@ -71,15 +72,20 @@ function SignIn() {
                 enterkeyhint="next"
                 mode="ios"
                 required={inputReq}
-                onIonChange={(e: any) => {
-                  if (usernameRegex.test(e.target.value)) {
-                    setValidCheck(!validCheck);
-                    setUsername(e.target.value);
+                onIonChange={(u: any) => {
+                  if (usernameRegex.test(u.target.value)) {
+                    setUsernameCheck(true);
+                    setUsername(u.target.value);
+                  } else {
+                    setUsernameCheck(false);
                   }
                 }}
               >
-                <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
-                  <IonIcon icon={!validCheck ? cross : tick} />
+                <IonBadge
+                  slot="end"
+                  color={!usernameCheck ? 'danger' : 'success'}
+                >
+                  <IonIcon icon={!usernameCheck ? cross : tick} />
                 </IonBadge>
               </IonInput>
             </IonItem>
@@ -94,19 +100,20 @@ function SignIn() {
                 enterkeyhint="enter"
                 mode="ios"
                 required={inputReq}
-                onIonChange={(f: any) => {
-                  if (passwordRegex.test(f.target.value)) {
-                    console.log('passed ' + validCheck);
-                    setValidCheck(true);
-                    setPassword(f.target.value);
+                onIonChange={(p: any) => {
+                  if (passwordRegex.test(p.target.value)) {
+                    setPasswordCheck(true);
+                    setPassword(p.target.value);
                   } else {
-                    console.log('failed ' + validCheck);
-                    setValidCheck(false);
+                    setPasswordCheck(false);
                   }
                 }}
               >
-                <IonBadge slot="end" color={!validCheck ? 'danger' : 'success'}>
-                  <IonIcon icon={!validCheck ? cross : tick} />
+                <IonBadge
+                  slot="end"
+                  color={!passwordCheck ? 'danger' : 'success'}
+                >
+                  <IonIcon icon={!passwordCheck ? cross : tick} />
                 </IonBadge>
               </IonInput>
             </IonItem>
@@ -124,7 +131,7 @@ function SignIn() {
                 //return setLoginTrue;
               } else {
                 //fail login
-                setValidCheck(!validCheck);
+                setPasswordCheck(!passwordCheck);
               }
             }}
           >
