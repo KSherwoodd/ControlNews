@@ -125,7 +125,11 @@ function SignIn() {
 
           <IonButton
             onClick={() => {
-              if (checkLogin(username, password)) {
+              if (
+                checkLogin(username, password) &&
+                usernameCheck &&
+                passwordCheck
+              ) {
                 //redirect to feed page
                 return history.push('/feed');
               }
