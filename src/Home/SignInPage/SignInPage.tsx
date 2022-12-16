@@ -42,6 +42,10 @@ function checkLogin(username: string, password: string) {
 
 //That time is now I guess :(
 
+//That time was not then, and it is not now, I have no idea
+//Starting to think I'm out of my depth with react
+//Oh well, it makes the colours change according to Regex now so that's something...
+
 function SignIn() {
   const [passwordCheck, setPasswordCheck] = useState(false);
   const [usernameCheck, setUsernameCheck] = useState(false);
