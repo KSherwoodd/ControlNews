@@ -53,9 +53,7 @@ function SignIn() {
 
   const passwordRegex = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,20}$');
 
-  const usernameRegex = new RegExp(
-    '^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$'
-  );
+  const usernameRegex = new RegExp('^(?!.*..)(?!.*.$)[^W][w.]{0,29}$');
 
   return (
     <>
