@@ -50,9 +50,7 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const history = useHistory();
 
-  const passwordRegex = new RegExp(
-    '^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$'
-  );
+  const passwordRegex = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,20}$');
 
   const usernameRegex = new RegExp(
     '^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$'
@@ -98,8 +96,12 @@ function SignIn() {
                 required={inputReq}
                 onIonChange={(f: any) => {
                   if (passwordRegex.test(f.target.value)) {
-                    setValidCheck(!validCheck);
+                    console.log('passed ' + validCheck);
+                    setValidCheck(true);
                     setPassword(f.target.value);
+                  } else {
+                    console.log('failed ' + validCheck);
+                    setValidCheck(false);
                   }
                 }}
               >
