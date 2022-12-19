@@ -46,7 +46,7 @@ function checkLogin(username: string, password: string) {
 //Starting to think I'm out of my depth with react
 //Oh well, it makes the colours change according to Regex now so that's something...
 
-function SignIn() {
+function SignIn(loggedIn: boolean) {
   const [passwordCheck, setPasswordCheck] = useState(false);
   const [usernameCheck, setUsernameCheck] = useState(false);
   const autoFocus = true;
@@ -149,5 +149,12 @@ export default SignIn;
 //  next step:
 //
 //https://ionicframework.com/docs/api/input#helper--error-text
+//
+//
+
+//
+//
+//https://reactjs.org/docs/lifting-state-up.html
+//https://reactjs.org/docs/thinking-in-react.html
 //
 //

@@ -95,7 +95,7 @@ const App: React.FunctionComponent = () => {
 
           <Route
             path="/Feed"
-            render={() => (loggedIn ? <MainFeed /> : <SignIn />)}
+            render={() => (loggedIn ? <MainFeed /> : <SignIn loggedIn={false}/>)}
             exact={true}
           />
 
