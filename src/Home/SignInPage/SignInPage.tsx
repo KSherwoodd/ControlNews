@@ -46,7 +46,7 @@ function checkLogin(username: string, password: string) {
 //Starting to think I'm out of my depth with react
 //Oh well, it makes the colours change according to Regex now so that's something...
 
-function SignIn(loggedIn: boolean) {
+function SignIn() {
   const [passwordCheck, setPasswordCheck] = useState(false);
   const [usernameCheck, setUsernameCheck] = useState(false);
   const autoFocus = true;
@@ -56,7 +56,9 @@ function SignIn(loggedIn: boolean) {
   const history = useHistory();
   const userInfo: [username: string, password: string] = [username, password];
 
-  const passwordRegex = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,20}$');
+  const passwordRegex = new RegExp(
+    '(?=(.*[0-9]))(?=.*[\\!@#$%^&*()\\[\\]{}\\-_+=~`|:;"\'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,29}'
+  );
 
   const usernameRegex = new RegExp(
     '^(?!.*\\.\\.)(?!.*\\.$)[^\\W][\\w.]{0,29}$'

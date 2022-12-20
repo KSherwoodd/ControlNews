@@ -79,7 +79,7 @@ const MainFeed = () => {
 
 //https://stackblitz.com/edit/ionic-react-menu-hfudwc?file=src%2FApp.tsx,src%2Ftheme%2Fvariables.css
 const App: React.FunctionComponent = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   //Conditional routing, the setLoggedIn state modifier is sent to the SignIn component
   //So that when setLoginTrue is run in SignIn, it will update the state in App (here)
@@ -95,7 +95,7 @@ const App: React.FunctionComponent = () => {
 
           <Route
             path="/Feed"
-            render={() => (loggedIn ? <MainFeed /> : <SignIn loggedIn={false}/>)}
+            render={() => (loggedIn ? <MainFeed /> : <SignIn />)}
             exact={true}
           />
 
