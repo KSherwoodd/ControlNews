@@ -102,7 +102,7 @@ function SignIn() {
               <IonInput
                 className="detail-input"
                 type="password"
-                placeholder="Password"
+                placeholder="Please include 8 characters, a capital / lowercase letter, a number and a symbol"
                 autocomplete="current-password"
                 enterkeyhint="enter"
                 mode="ios"
